@@ -1,2 +1,8 @@
-<p>landing works!</p>
+<div class="page-layout">
+    <div class="nav-container">
+        <!-- Consider accessibility -->
+        <a *ngFor="let project of projects; index as i" class="link" (mouseenter)="previewProject(i)">{{ project }}</a>
+    </div>
+    <div class="project">{{ selectedProjectPreview }}</div>
+</div>
 

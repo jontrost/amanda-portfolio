@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./styles/reset.scss";
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
