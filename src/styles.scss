@@ -1,8 +1,16 @@
 @use "./styles/reset.scss";
+@use "./styles/variables.scss";
+@use "./styles/typography.scss";
 
 body {
     height: 100vh;
     width: 100vw;
+    background-image: linear-gradient(
+        to right top,
+        variables.$color-background-primary,
+        variables.$color-background-secondary
+    );
+    color: variables.$color-white;
 }
 
 a,

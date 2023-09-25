@@ -1,8 +1,16 @@
 <div class="page-layout">
     <div class="nav-container">
-        <!-- Consider accessibility -->
-        <a *ngFor="let project of projects; index as i" class="link" (mouseenter)="previewProject(i)">{{ project }}</a>
+        <div *ngFor="let project of projects; index as i" class="link-wrapper">
+            <a
+                class="link"
+                (mouseenter)="selectProject(i)"
+                [ngClass]="{ 'selected-project': projects[selectedProjectIndex].name === project.name }"
+                >{{ project.name }}</a
+            >
+        </div>
     </div>
-    <div class="project">{{ selectedProjectPreview }}</div>
+    <div class="preview">
+        <img @transition *ngIf="!projectTransitionFadeOutInProgress" [src]="projects[selectedProjectIndex].imagePath" />
+    </div>
 </div>
 

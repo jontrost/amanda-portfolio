@@ -1,4 +1,5 @@
 @use "../../../styles/placeholders.scss";
+@use "../../../styles/variables.scss";
 
 .page-layout {
     @extend %page-layout;
@@ -9,30 +10,37 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
-    padding: 1rem;
+    gap: 1rem;
+    padding: 1rem 0;
 }
 
-.link {
+.link-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 4rem;
-    width: 20rem;
-    padding: 1rem;
-    border: 0.0625rem solid black;
-    border-radius: 0.25rem;
-    transition: transform 0.25s;
+    width: 25rem;
+    font-size: 1.25rem;
+    background-image: linear-gradient(to right, rgba(variables.$color-white, 0.125), transparent);
+}
 
-    &:hover {
-        transform: translateX(5rem);
+.link {
+    width: 100%;
+    padding: 1rem;
+    transition: transform 500ms; // TRANSITION_FADE_OUT_DURATION_MS * 2
+    user-select: none;
+
+    &.selected-project {
+        transform: translateX(3rem);
     }
 }
 
-.project {
+.preview {
     display: flex;
     height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
