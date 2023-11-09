@@ -1,46 +1,44 @@
 @use "../../../styles/placeholders.scss";
 @use "../../../styles/variables.scss";
+@use "sass:color";
 
 .page-layout {
-    @extend %page-layout;
-    flex-direction: row;
-}
-
-.nav-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 1rem;
-    padding: 1rem 0;
-}
-
-.link-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 4rem;
-    width: 25rem;
-    font-size: 1.25rem;
-    background-image: linear-gradient(to right, rgba(variables.$color-white, 0.125), transparent);
-}
-
-.link {
-    width: 100%;
-    padding: 1rem;
-    transition: transform 500ms; // TRANSITION_FADE_OUT_DURATION_MS * 2
-    user-select: none;
-
-    &.selected-project {
-        transform: translateX(3rem);
-    }
-}
-
-.preview {
-    display: flex;
     height: 100%;
     width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    position: relative;
+    // This radial gradient probably needs to stretch end-to-end but be limited by a max width/height
+    background: radial-gradient(35% 35% at center center, rgba(variables.$color-accent, 0.35) 0%, transparent 100%);
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 1rem;
+    border: 0.125rem solid variables.$color-accent;
+    padding: 3rem;
+    background-color: color.scale($color: variables.$color-secondary, $lightness: -50%);
+}
+
+.left-demo {
+    margin-right: -15rem;
+    opacity: 20%;
+    transform: scale(0.8);
+}
+
+.middle-demo {
+    z-index: 1;
+}
+
+.right-demo {
+    margin-left: -15rem;
+    opacity: 20%;
+    transform: scale(0.8);
 }

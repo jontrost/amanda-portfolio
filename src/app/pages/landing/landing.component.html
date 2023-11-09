@@ -1,16 +1,18 @@
 <div class="page-layout">
-    <div class="nav-container">
-        <div *ngFor="let project of projects; index as i" class="link-wrapper">
-            <a
-                class="link"
-                (mouseenter)="selectProject(i)"
-                [ngClass]="{ 'selected-project': projects[selectedProjectIndex].name === project.name }"
-                >{{ project.name }}</a
-            >
+    <div class="card-container">
+        <!-- Utilize optimized images Angular -->
+        <!-- Consider accessibility with these click handlers. Might need to use a button -->
+        <div class="card left-demo" (click)="selectLeftPreview()">
+            <div>{{ previews[leftPreviewIndex()].name }}</div>
+            <img [src]="previews[leftPreviewIndex()].imagePath" />
+        </div>
+        <div [@carouselAnimation]="currentPreviewIndex() % 2 === 0 ? 'open' : 'closed'" class="card middle-demo">
+            <div>{{ previews[currentPreviewIndex()].name }}</div>
+            <img [src]="previews[currentPreviewIndex()].imagePath" />
+        </div>
+        <div class="card right-demo" (click)="selectRightPreview()">
+            <div>{{ previews[rightPreviewIndex()].name }}</div>
+            <img [src]="previews[rightPreviewIndex()].imagePath" />
         </div>
     </div>
-    <div class="preview">
-        <img @transition *ngIf="!projectTransitionFadeOutInProgress" [src]="projects[selectedProjectIndex].imagePath" />
-    </div>
 </div>
-

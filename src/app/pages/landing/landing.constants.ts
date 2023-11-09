@@ -3,8 +3,6 @@ export interface Project {
     imagePath: string;
 }
 
-export const TRANSITION_FADE_OUT_DURATION_MS: number = 250; // Keep the scss link transition duration in sync with this
-export const AUTO_TRANSITION_DELAY_MS: number = 5000;
 export const PROJECTS: Project[] = [
     {
         name: "Ethereal Dance",
