@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { AnimationState } from "../pages/landing/landing.animations";
+import { CarouselAnimationState } from "../animations/carousel.animations";
 
 @Pipe({
-    name: "landingAnimationState",
+    name: "carouselAnimationState",
     standalone: true
 })
-export class LandingAnimationStatePipe implements PipeTransform {
-    transform(index: number, leftIndex: number, currentIndex: number, rightIndex: number): AnimationState {
+export class CarouselAnimationStatePipe implements PipeTransform {
+    transform(index: number, leftIndex: number, currentIndex: number, rightIndex: number): CarouselAnimationState {
         switch (index) {
             case leftIndex:
                 return "left";

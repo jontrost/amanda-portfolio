@@ -8,8 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // This radial gradient probably needs to stretch end-to-end but be limited by a max width/height
-    background: radial-gradient(35% 35% at center center, rgba(variables.$color-accent, 0.35) 0%, transparent 100%);
+    background: radial-gradient(40% 40% at center center, rgba(variables.$color-accent, 0.4) 0%, transparent 100%);
 }
 
 .card-container {
@@ -29,5 +28,9 @@
     border: 0.125rem solid variables.$color-accent;
     padding: 3rem;
     background-color: color.scale($color: variables.$color-secondary, $lightness: -50%);
-    cursor: pointer;
+
+    & > img {
+        height: auto;
+        width: auto;
+    }
 }
