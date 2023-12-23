@@ -2,17 +2,17 @@
     <div class="card-container">
         <!-- Utilize optimized images Angular -->
         <!-- Consider accessibility with these click handlers. Might need to use a button -->
-        <div class="card left-demo" (click)="selectLeftPreview()">
-            <div>{{ previews[leftPreviewIndex()].name }}</div>
-            <img [src]="previews[leftPreviewIndex()].imagePath" />
-        </div>
-        <div [@carouselAnimation]="currentPreviewIndex() % 2 === 0 ? 'open' : 'closed'" class="card middle-demo">
-            <div>{{ previews[currentPreviewIndex()].name }}</div>
-            <img [src]="previews[currentPreviewIndex()].imagePath" />
-        </div>
-        <div class="card right-demo" (click)="selectRightPreview()">
-            <div>{{ previews[rightPreviewIndex()].name }}</div>
-            <img [src]="previews[rightPreviewIndex()].imagePath" />
-        </div>
+        @for (preview of previews; track $index) {
+            <div
+                [@rotationAnimation]="
+                    animationStatePipe.transform($index, leftPreviewIndex(), currentPreviewIndex(), rightPreviewIndex())
+                "
+                class="card"
+                (click)="selectPreview($index)"
+            >
+                <div>{{ preview.name }}</div>
+                <img [src]="preview.imagePath" />
+            </div>
+        }
     </div>
 </div>

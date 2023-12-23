@@ -5,27 +5,23 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
     {
-        name: "Ethereal Dance",
-        imagePath: "/assets/projects/ethereal-dance/preview.gif"
+        name: "Project 1",
+        imagePath: "/assets/images/placeholder.jpg"
     },
     {
-        name: "One Million Projects Flyer",
-        imagePath: "/assets/projects/one-million-projects-flyer/preview.jpg"
+        name: "Project 2",
+        imagePath: "/assets/images/placeholder.jpg"
     },
     {
-        name: "Social Assurance Infographic",
-        imagePath: "/assets/projects/social-assurance-infographic/preview.png"
+        name: "Project 3",
+        imagePath: "/assets/images/placeholder.jpg"
     },
     {
-        name: "Sprint Back to School",
-        imagePath: "/assets/projects/sprint-back-to-school/preview.png"
+        name: "Project 4",
+        imagePath: "/assets/images/placeholder.jpg"
     },
     {
-        name: "Sprint Block Party",
-        imagePath: "/assets/projects/sprint-block-party/preview.png"
-    },
-    {
-        name: "Sprint Social Statics",
-        imagePath: "/assets/projects/sprint-social-statics/preview.png"
+        name: "Project 5",
+        imagePath: "/assets/images/placeholder.jpg"
     }
 ];

@@ -13,11 +13,15 @@
 }
 
 .card-container {
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 75%;
 }
 
 .card {
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -25,20 +29,5 @@
     border: 0.125rem solid variables.$color-accent;
     padding: 3rem;
     background-color: color.scale($color: variables.$color-secondary, $lightness: -50%);
-}
-
-.left-demo {
-    margin-right: -15rem;
-    opacity: 20%;
-    transform: scale(0.8);
-}
-
-.middle-demo {
-    z-index: 1;
-}
-
-.right-demo {
-    margin-left: -15rem;
-    opacity: 20%;
-    transform: scale(0.8);
+    cursor: pointer;
 }
