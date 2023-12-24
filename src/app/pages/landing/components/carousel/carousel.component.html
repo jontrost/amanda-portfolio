@@ -1,0 +1,26 @@
+<div class="card-container">
+    <div class="card placeholder" aria-hidden="true">
+        <h2>Layout Placeholder</h2>
+        <img ngSrc="/assets/images/placeholder.jpg" [height]="900" [width]="1200" priority />
+    </div>
+    @for (preview of previews; track $index) {
+        <button
+            [@carouselAnimation]="
+                carouselAnimationStatePipe.transform(
+                    $index,
+                    leftPreviewIndex(),
+                    currentPreviewIndex(),
+                    rightPreviewIndex()
+                )
+            "
+            class="card"
+            [attr.aria-label]="$index === currentPreviewIndex() ? 'view project details page' : 'view project preview'"
+            [attr.role]="$index === currentPreviewIndex() ? 'link' : undefined"
+            (click)="$index === currentPreviewIndex() ? viewDetails(preview.name) : viewPreview($index)"
+        >
+            <h2>{{ preview.name }}</h2>
+            <img [ngSrc]="preview.imagePath" [height]="900" [width]="1200" priority />
+        </button>
+    }
+</div>
+

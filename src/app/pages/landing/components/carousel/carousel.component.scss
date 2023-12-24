@@ -1,0 +1,43 @@
+@use "../../../../../styles/placeholders.scss";
+@use "../../../../../styles/variables.scss";
+@use "sass:color";
+
+$card-spacing: 3rem;
+
+:host {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+.card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $card-spacing;
+    width: 50%;
+    border-radius: 1rem;
+    border: 0.125rem solid variables.$color-accent;
+    padding: $card-spacing;
+    background-color: color.scale($color: variables.$color-secondary, $lightness: -50%);
+
+    & > img {
+        height: auto;
+        width: auto;
+    }
+
+    &.placeholder {
+        position: relative;
+        visibility: hidden;
+    }
+}

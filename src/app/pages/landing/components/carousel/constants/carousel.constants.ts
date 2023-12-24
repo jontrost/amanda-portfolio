@@ -1,4 +1,4 @@
-import { Preview } from "../../models/preview.model";
+import { Preview } from "../models/preview.model";
 
 export const PREVIEWS: Preview[] = [
     {
