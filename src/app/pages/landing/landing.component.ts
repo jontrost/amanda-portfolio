@@ -4,7 +4,7 @@ import { Component, computed, Signal, signal, WritableSignal } from "@angular/co
 import { CAROUSEL_ANIMATION } from "../../animations/carousel.animations";
 import { Preview } from "../../models/preview.model";
 import { CarouselAnimationStatePipe } from "../../pipes/carousel-animation-state.pipe";
-import { PROJECTS } from "./landing.constants";
+import { PREVIEWS } from "./landing.constants";
 
 @Component({
     selector: "app-landing",
@@ -15,7 +15,7 @@ import { PROJECTS } from "./landing.constants";
     styleUrls: ["./landing.component.scss"]
 })
 export default class LandingComponent {
-    readonly previews: Preview[] = PROJECTS;
+    readonly previews: Preview[] = PREVIEWS;
     readonly carouselAnimationStatePipe: CarouselAnimationStatePipe = new CarouselAnimationStatePipe();
     currentPreviewIndex: WritableSignal<number> = signal(1);
     leftPreviewIndex: Signal<number> = computed(() =>

@@ -1,27 +1,36 @@
-export interface Project {
-    name: string;
-    imagePath: string;
-}
+import { Preview } from "../../models/preview.model";
 
-export const PROJECTS: Project[] = [
+export const PREVIEWS: Preview[] = [
     {
-        name: "Project 1",
-        imagePath: "/assets/images/placeholder.jpg"
+        name: "ADPi Social Promo",
+        imagePath: "/assets/projects/adpi-social-promo/preview.jpg"
     },
     {
-        name: "Project 2",
-        imagePath: "/assets/images/placeholder.jpg"
+        name: "Characters of Carnival",
+        imagePath: "/assets/projects/characters-of-carnival/preview.jpg"
     },
     {
-        name: "Project 3",
-        imagePath: "/assets/images/placeholder.jpg"
+        name: "Ethereal Dance",
+        imagePath: "/assets/projects/ethereal-dance/preview.jpg"
     },
     {
-        name: "Project 4",
-        imagePath: "/assets/images/placeholder.jpg"
+        name: "LemonADPi Promo",
+        imagePath: "/assets/projects/lemon-adpi-promo/preview.jpg"
     },
     {
-        name: "Project 5",
-        imagePath: "/assets/images/placeholder.jpg"
+        name: "Social Assurance Infographic",
+        imagePath: "/assets/projects/social-assurance-infographic/preview.jpg"
+    },
+    {
+        name: "Sprint Back to School",
+        imagePath: "/assets/projects/sprint-back-to-school/preview.jpg"
+    },
+    {
+        name: "Sprint Block Party",
+        imagePath: "/assets/projects/sprint-block-party/preview.jpg"
+    },
+    {
+        name: "Sprint Social Statics",
+        imagePath: "/assets/projects/sprint-social-statics/preview.jpg"
     }
 ];

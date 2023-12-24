@@ -1,5 +1,10 @@
 <div class="page-layout">
+    <h1>Amanda Lee Design</h1>
     <div class="card-container">
+        <div class="card placeholder" aria-hidden="true">
+            <h2>Layout Placeholder</h2>
+            <img ngSrc="/assets/images/placeholder.jpg" [height]="900" [width]="1200" priority />
+        </div>
         @for (preview of previews; track $index) {
             <button
                 [@carouselAnimation]="
@@ -14,8 +19,8 @@
                 aria-label="select project to preview in the carousel animation"
                 (click)="selectPreview($index)"
             >
-                <div>{{ preview.name }}</div>
-                <img [ngSrc]="preview.imagePath" height="360" width="526" priority />
+                <h2>{{ preview.name }}</h2>
+                <img [ngSrc]="preview.imagePath" [height]="900" [width]="1200" priority />
             </button>
         }
     </div>
