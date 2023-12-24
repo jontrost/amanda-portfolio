@@ -16,8 +16,11 @@
                     )
                 "
                 class="card"
-                aria-label="select project to preview in the carousel animation"
-                (click)="selectPreview($index)"
+                [attr.aria-label]="
+                    $index === currentPreviewIndex() ? 'view project details page' : 'view project preview'
+                "
+                [attr.role]="$index === currentPreviewIndex() ? 'link' : undefined"
+                (click)="$index === currentPreviewIndex() ? viewDetails(preview.name) : viewPreview($index)"
             >
                 <h2>{{ preview.name }}</h2>
                 <img [ngSrc]="preview.imagePath" [height]="900" [width]="1200" priority />
