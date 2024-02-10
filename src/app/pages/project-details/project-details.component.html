@@ -1,4 +1,19 @@
 <div class="page-layout">
-    <h1>{{ projectName }}</h1>
+    <h1 class="name">{{ project.name }}</h1>
+    <!-- Adjust height/width since it's different for each one. Probably include that in the project const? -->
+    <img
+        class="image"
+        [ngSrc]="project.galleryImages[selectedImageIndex].path"
+        [height]="project.galleryImages[selectedImageIndex].height"
+        [width]="project.galleryImages[selectedImageIndex].width"
+        priority
+    />
+    <p class="description">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."
+    </p>
 </div>
 

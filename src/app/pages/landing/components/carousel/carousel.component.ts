@@ -2,9 +2,9 @@ import { NgOptimizedImage } from "@angular/common";
 import { Component, computed, inject, Signal, signal, WritableSignal } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 
+import { PROJECTS } from "../../../../constants/projects.constants";
+import { Project } from "../../../../models/project.model";
 import { CAROUSEL_ANIMATION } from "./animations/carousel.animations";
-import { PREVIEWS } from "./constants/carousel.constants";
-import { Preview } from "./models/preview.model";
 import { CarouselAnimationStatePipe } from "./pipes/carousel-animation-state.pipe";
 
 @Component({
@@ -18,12 +18,12 @@ import { CarouselAnimationStatePipe } from "./pipes/carousel-animation-state.pip
 export class CarouselComponent {
     currentPreviewIndex: WritableSignal<number> = signal(1);
     leftPreviewIndex: Signal<number> = computed(() =>
-        this.currentPreviewIndex() - 1 < 0 ? this.previews.length - 1 : this.currentPreviewIndex() - 1
+        this.currentPreviewIndex() - 1 < 0 ? this.projects.length - 1 : this.currentPreviewIndex() - 1
     );
     rightPreviewIndex: Signal<number> = computed(() =>
-        this.currentPreviewIndex() + 1 > this.previews.length - 1 ? 0 : this.currentPreviewIndex() + 1
+        this.currentPreviewIndex() + 1 > this.projects.length - 1 ? 0 : this.currentPreviewIndex() + 1
     );
-    readonly previews: Preview[] = PREVIEWS;
+    readonly projects: Project[] = PROJECTS;
     readonly carouselAnimationStatePipe: CarouselAnimationStatePipe = new CarouselAnimationStatePipe();
     private readonly router = inject(Router);
 
@@ -42,7 +42,7 @@ export class CarouselComponent {
         }
     }
 
-    viewDetails(name: string): void {
-        this.router.navigate([encodeURI(`project/${name.toLowerCase().replace(/\W+/g, "-")}`)]);
+    viewDetails(project: Project): void {
+        this.router.navigate([`project/${project.route}`]);
     }
 }

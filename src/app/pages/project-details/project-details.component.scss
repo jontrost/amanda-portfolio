@@ -1,6 +1,75 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/placeholders.scss";
+@use "sass:color";
+
+$page-spacing-desktop: 3rem;
+$page-spacing-tablet: 2rem;
+$page-spacing-mobile: 1rem;
+$tablet-breakpoint: 90rem;
+$mobile-breakpoint: 45rem;
+
 .page-layout {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    padding: $page-spacing-desktop;
+    display: grid;
+    gap: $page-spacing-desktop;
+    align-items: center;
+    grid-template-columns: minmax(0, auto) auto;
+    grid-template-rows: minmax(0, auto) minmax(0, 1fr);
+    grid-template-areas:
+        "name name"
+        "image description";
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: $page-spacing-tablet;
+        gap: $page-spacing-tablet;
+        justify-items: center;
+        grid-template-columns: 100%;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+            "name"
+            "image"
+            "description";
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: $page-spacing-mobile;
+        gap: $page-spacing-mobile;
+    }
+}
+
+.name {
+    text-transform: capitalize;
+    grid-area: name;
+
+    @media (max-width: $tablet-breakpoint) {
+        text-align: center;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        font-size: variables.$font-size-h2;
+    }
+}
+
+.image {
+    height: auto;
+    width: auto;
+    grid-area: image;
+}
+
+.description {
+    grid-area: description;
+    //figure out card colors
+    border: 0.125rem solid variables.$color-primary;
+    background-color: variables.$color-secondary;
+    font-size: variables.$font-size-h4;
+
+    @media (max-width: $tablet-breakpoint) {
+        font-size: variables.$font-size-h6;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        font-size: variables.$font-size-default;
+    }
 }
