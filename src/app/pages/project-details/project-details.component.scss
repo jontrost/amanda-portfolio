@@ -5,8 +5,8 @@
 $page-spacing-desktop: 3rem;
 $page-spacing-tablet: 2rem;
 $page-spacing-mobile: 1rem;
-$tablet-breakpoint: 90rem;
-$mobile-breakpoint: 45rem;
+$tablet-breakpoint: 80rem;
+$mobile-breakpoint: 40rem;
 
 .page-layout {
     height: 100%;
@@ -18,7 +18,7 @@ $mobile-breakpoint: 45rem;
     grid-template-columns: minmax(0, auto) auto;
     grid-template-rows: minmax(0, auto) minmax(0, 1fr);
     grid-template-areas:
-        "name name"
+        "header header"
         "image description";
 
     @media (max-width: $tablet-breakpoint) {
@@ -28,7 +28,7 @@ $mobile-breakpoint: 45rem;
         grid-template-columns: 100%;
         grid-template-rows: auto minmax(0, 1fr) auto;
         grid-template-areas:
-            "name"
+            "header"
             "image"
             "description";
     }
@@ -36,12 +36,21 @@ $mobile-breakpoint: 45rem;
     @media (max-width: $mobile-breakpoint) {
         padding: $page-spacing-mobile;
         gap: $page-spacing-mobile;
+        grid-template-rows: auto auto minmax(0, 1fr);
+        grid-template-areas:
+            "header"
+            "description"
+            "image";
     }
+}
+
+.header {
+    display: flex;
+    grid-area: header;
 }
 
 .name {
     text-transform: capitalize;
-    grid-area: name;
 
     @media (max-width: $tablet-breakpoint) {
         text-align: center;
@@ -56,6 +65,10 @@ $mobile-breakpoint: 45rem;
     height: auto;
     width: auto;
     grid-area: image;
+
+    @media (max-width: $mobile-breakpoint) {
+        align-self: flex-start;
+    }
 }
 
 .description {

@@ -1,6 +1,8 @@
 <div class="page-layout">
-    <h1 class="name">{{ project.name }}</h1>
-    <!-- Adjust height/width since it's different for each one. Probably include that in the project const? -->
+    <div class="header">
+        <a routerLink="" routerLinkActive="router-link-active"><app-icon icon="arrow-left"></app-icon>Back</a>
+        <h1 class="name">{{ project.name }}</h1>
+    </div>
     <img
         class="image"
         [ngSrc]="project.galleryImages[selectedImageIndex].path"

@@ -13,9 +13,9 @@ export const PROJECTS: Project[] = [
         },
         galleryImages: [
             {
-                path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                height: 889,
-                width: 710
+                path: "/assets/projects/characters-of-carnival/preview.jpg",
+                height: 900,
+                width: 1200
             },
             {
                 path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",

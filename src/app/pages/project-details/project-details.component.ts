@@ -1,14 +1,15 @@
 import { NgOptimizedImage } from "@angular/common";
 import { Component, inject, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, RouterModule } from "@angular/router";
 
+import { IconComponent } from "../../components/icon/icon.component";
 import { PROJECTS } from "../../constants/projects.constants";
 import { Project } from "../../models/project.model";
 
 @Component({
     selector: "app-project-details",
     standalone: true,
-    imports: [NgOptimizedImage],
+    imports: [IconComponent, NgOptimizedImage, RouterModule],
     templateUrl: "./project-details.component.html",
     styleUrl: "./project-details.component.scss"
 })
