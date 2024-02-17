@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, computed, input, Signal } from "@angular/core";
 
 type Icon = "arrow-left";
 
@@ -9,12 +9,7 @@ type Icon = "arrow-left";
     templateUrl: "./icon.component.html",
     styleUrl: "./icon.component.scss"
 })
-export class IconComponent implements OnInit {
-    @Input() icon: Icon;
-    link: string;
-
-    // maybe this can be an input signaL??
-    ngOnInit(): void {
-        this.link = `assets/icons/${this.icon}.svg#${this.icon}`;
-    }
+export class IconComponent {
+    icon = input.required<Icon>();
+    link: Signal<string> = computed(() => `assets/icons/${this.icon()}.svg#${this.icon()}`);
 }

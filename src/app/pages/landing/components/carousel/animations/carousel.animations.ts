@@ -6,7 +6,7 @@ export const CAROUSEL_ANIMATION = trigger("carouselAnimation", [
     state(
         "left",
         style({
-            opacity: "20%",
+            opacity: "50%",
             transform: "translateX(-75%) scale(0.75)"
         })
     ),
@@ -21,7 +21,7 @@ export const CAROUSEL_ANIMATION = trigger("carouselAnimation", [
     state(
         "right",
         style({
-            opacity: "20%",
+            opacity: "50%",
             transform: "translateX(75%) scale(0.75)"
         })
     ),

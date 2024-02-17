@@ -1,5 +1,4 @@
 @use "../../../styles/variables.scss";
-@use "../../../styles/placeholders.scss";
 @use "sass:color";
 
 $page-spacing-desktop: 3rem;
@@ -46,6 +45,7 @@ $mobile-breakpoint: 40rem;
 
 .header {
     display: flex;
+    flex-direction: column;
     grid-area: header;
 }
 
@@ -65,6 +65,7 @@ $mobile-breakpoint: 40rem;
     height: auto;
     width: auto;
     grid-area: image;
+    border-radius: 1rem;
 
     @media (max-width: $mobile-breakpoint) {
         align-self: flex-start;
@@ -73,16 +74,36 @@ $mobile-breakpoint: 40rem;
 
 .description {
     grid-area: description;
-    //figure out card colors
-    border: 0.125rem solid variables.$color-primary;
+    border: 0.125rem solid variables.$color-accent;
+    border-radius: 1rem;
     background-color: variables.$color-secondary;
     font-size: variables.$font-size-h4;
+    padding: $page-spacing-desktop;
 
     @media (max-width: $tablet-breakpoint) {
+        padding: $page-spacing-tablet;
         font-size: variables.$font-size-h6;
     }
 
     @media (max-width: $mobile-breakpoint) {
+        padding: $page-spacing-mobile;
         font-size: variables.$font-size-default;
     }
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: variables.$font-size-h6;
+
+    &:hover {
+        // figure out a better color for this
+        color: variables.$color-accent;
+    }
+}
+
+.icon {
+    height: 2rem;
+    width: 2rem;
 }

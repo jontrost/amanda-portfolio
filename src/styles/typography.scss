@@ -1,5 +1,4 @@
 @use "../styles/variables.scss";
-@use "../styles/placeholders.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 body {
@@ -8,25 +7,25 @@ body {
 }
 
 h1 {
-    @extend %h1;
+    font-size: variables.$font-size-h1;
 }
 
 h2 {
-    @extend %h2;
+    font-size: variables.$font-size-h2;
 }
 
 h3 {
-    @extend %h3;
+    font-size: variables.$font-size-h3;
 }
 
 h4 {
-    @extend %h4;
+    font-size: variables.$font-size-h4;
 }
 
 h5 {
-    @extend %h5;
+    font-size: variables.$font-size-h5;
 }
 
 h6 {
-    @extend %h6;
+    font-size: variables.$font-size-h6;
 }
