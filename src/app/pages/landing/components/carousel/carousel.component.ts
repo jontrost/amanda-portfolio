@@ -27,7 +27,7 @@ export class CarouselComponent {
     readonly carouselAnimationStatePipe: CarouselAnimationStatePipe = new CarouselAnimationStatePipe();
     private readonly router = inject(Router);
 
-    viewPreview(index: number): void {
+    displayPreview(index: number): void {
         const animationState = this.carouselAnimationStatePipe.transform(
             index,
             this.leftPreviewIndex(),
@@ -42,7 +42,7 @@ export class CarouselComponent {
         }
     }
 
-    viewDetails(project: Project): void {
+    displayDetails(project: Project): void {
         this.router.navigate([`project/${project.route}`]);
     }
 }

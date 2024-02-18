@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from "@angular/common";
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, computed, inject, OnInit, Signal, signal, WritableSignal } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 
 import { IconComponent } from "../../components/icon/icon.component";
@@ -15,7 +15,13 @@ import { Project } from "../../models/project.model";
 })
 export default class ProjectDetailsComponent implements OnInit {
     project: Project;
-    selectedImageIndex: number = 0;
+    currentImageIndex: WritableSignal<number> = signal(1);
+    previousImageIndex: Signal<number> = computed(() =>
+        this.currentImageIndex() - 1 < 0 ? this.project.galleryImages.length - 1 : this.currentImageIndex() - 1
+    );
+    nextImageIndex: Signal<number> = computed(() =>
+        this.currentImageIndex() + 1 > this.project.galleryImages.length - 1 ? 0 : this.currentImageIndex() + 1
+    );
     private readonly activatedRoute = inject(ActivatedRoute);
 
     ngOnInit(): void {
@@ -23,5 +29,13 @@ export default class ProjectDetailsComponent implements OnInit {
         this.project = PROJECTS.find(
             (project) => project.route === this.activatedRoute.snapshot.paramMap.get("project")
         )!;
+    }
+
+    displayPreviousImage(): void {
+        this.currentImageIndex.set(this.previousImageIndex());
+    }
+
+    displayNextImage(): void {
+        this.currentImageIndex.set(this.nextImageIndex());
     }
 }

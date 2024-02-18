@@ -7,6 +7,8 @@ $page-spacing-mobile: 1rem;
 $tablet-breakpoint: 80rem;
 $mobile-breakpoint: 40rem;
 
+// Research single class vs nested hierarchy and rearrange if needed
+
 .page-layout {
     height: 100%;
     width: 100%;
@@ -44,12 +46,47 @@ $mobile-breakpoint: 40rem;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
     grid-area: header;
+    display: grid;
+    align-items: center;
+    column-gap: 5rem;
+    row-gap: 1rem;
+    grid-template-columns: minmax(0, max-content) auto;
+    grid-template-rows: minmax(0, auto) minmax(0, auto);
+    grid-template-areas:
+        "link empty"
+        "name selector";
+
+    @media (max-width: $tablet-breakpoint) {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, auto) minmax(0, auto) minmax(0, auto);
+        grid-template-areas:
+            "link"
+            "name"
+            "selector";
+    }
+}
+
+// Try scrapping the grid idea and moving this on top of the image itself
+.image-selector {
+    grid-area: selector;
+    display: flex;
+    gap: 5rem;
+
+    @media (max-width: $tablet-breakpoint) {
+        justify-self: center;
+    }
+}
+
+.image-selector-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: variables.$font-size-h5;
 }
 
 .name {
+    grid-area: name;
     text-transform: capitalize;
 
     @media (max-width: $tablet-breakpoint) {
@@ -65,7 +102,7 @@ $mobile-breakpoint: 40rem;
     height: auto;
     width: auto;
     grid-area: image;
-    border-radius: 1rem;
+    border-radius: 0.75rem;
 
     @media (max-width: $mobile-breakpoint) {
         align-self: flex-start;
@@ -75,7 +112,7 @@ $mobile-breakpoint: 40rem;
 .description {
     grid-area: description;
     border: 0.125rem solid variables.$color-accent;
-    border-radius: 1rem;
+    border-radius: 0.75rem;
     background-color: variables.$color-secondary;
     font-size: variables.$font-size-h4;
     padding: $page-spacing-desktop;
@@ -92,6 +129,7 @@ $mobile-breakpoint: 40rem;
 }
 
 .back-link {
+    grid-area: link;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -103,7 +141,12 @@ $mobile-breakpoint: 40rem;
     }
 }
 
-.icon {
+.back-icon {
     height: 2rem;
     width: 2rem;
+}
+
+.selector-icon {
+    height: 3rem;
+    width: 3rem;
 }

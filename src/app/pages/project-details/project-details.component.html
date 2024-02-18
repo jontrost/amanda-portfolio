@@ -1,15 +1,29 @@
 <div class="page-layout">
     <div class="header">
-        <a class="back-link" routerLink=""><app-icon class="icon" icon="arrow-left"></app-icon>Back</a>
+        <a class="back-link" routerLink=""><app-icon class="back-icon" icon="arrow-left"></app-icon>Back</a>
         <h1 class="name">{{ project.name }}</h1>
+        <div class="image-selector">
+            <button class="image-selector-button" (click)="displayPreviousImage()">
+                <app-icon class="selector-icon" icon="chevron-circle-left"></app-icon>
+                Previous Image
+            </button>
+            <button class="image-selector-button" (click)="displayNextImage()">
+                Next Image
+                <app-icon class="selector-icon" icon="chevron-circle-right"></app-icon>
+            </button>
+        </div>
     </div>
-    <img
-        class="image"
-        [ngSrc]="project.galleryImages[selectedImageIndex].path"
-        [height]="project.galleryImages[selectedImageIndex].height"
-        [width]="project.galleryImages[selectedImageIndex].width"
-        priority
-    />
+    @for (galleryImage of project.galleryImages; track $index) {
+        @if ($index === currentImageIndex()) {
+            <img
+                class="image"
+                [ngSrc]="galleryImage.path"
+                [height]="galleryImage.height"
+                [width]="galleryImage.width"
+                priority
+            />
+        }
+    }
     <p class="description">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

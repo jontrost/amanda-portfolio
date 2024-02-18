@@ -2,25 +2,27 @@ import { Project } from "../models/project.model";
 
 // Fix gallery images
 
+// Convert all these to jpg or webp
+
 export const PROJECTS: Project[] = [
     {
         name: "ADPi Social Promo",
         route: "adpi-social-promo",
         previewImage: {
             path: "/assets/projects/adpi-social-promo/preview.jpg",
-            height: 900,
-            width: 1200
+            width: 1200,
+            height: 900
         },
         galleryImages: [
             {
                 path: "/assets/projects/characters-of-carnival/preview.jpg",
-                height: 900,
-                width: 1200
+                width: 1200,
+                height: 900
             },
             {
                 path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                height: 1189,
-                width: 792
+                width: 792,
+                height: 1189
             }
         ]
     },
@@ -29,19 +31,19 @@ export const PROJECTS: Project[] = [
         route: "characters-of-carnival",
         previewImage: {
             path: "/assets/projects/characters-of-carnival/preview.jpg",
-            height: 900,
-            width: 1200
+            width: 1200,
+            height: 900
         },
         galleryImages: [
             {
                 path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                height: 889,
-                width: 710
+                width: 710,
+                height: 889
             },
             {
                 path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                height: 1189,
-                width: 792
+                width: 792,
+                height: 1189
             }
         ]
     },
@@ -50,19 +52,44 @@ export const PROJECTS: Project[] = [
         route: "ethereal-dance",
         previewImage: {
             path: "/assets/projects/ethereal-dance/preview.jpg",
-            height: 900,
-            width: 1200
+            width: 1200,
+            height: 900
         },
         galleryImages: [
             {
-                path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                height: 889,
-                width: 710
+                path: "/assets/projects/ethereal-dance/preview.jpg",
+                width: 1200,
+                height: 900
             },
             {
-                path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                height: 1189,
-                width: 792
+                path: "/assets/projects/ethereal-dance/brand-assets.png",
+                width: 4833,
+                height: 2258
+            },
+            {
+                path: "/assets/projects/ethereal-dance/brand-guide.png",
+                width: 2300,
+                height: 1550
+            },
+            {
+                path: "/assets/projects/ethereal-dance/final.gif",
+                width: 1160,
+                height: 751
+            },
+            {
+                path: "/assets/projects/ethereal-dance/poster.png",
+                width: 3000,
+                height: 2200
+            },
+            {
+                path: "/assets/projects/ethereal-dance/trifold-mockup-closed.png",
+                width: 2200,
+                height: 1400
+            },
+            {
+                path: "/assets/projects/ethereal-dance/trifold-mockup.png",
+                width: 1800,
+                height: 1500
             }
         ]
     },
@@ -71,19 +98,19 @@ export const PROJECTS: Project[] = [
         route: "lemonadpi-promo",
         previewImage: {
             path: "/assets/projects/lemon-adpi-promo/preview.jpg",
-            height: 900,
-            width: 1200
+            width: 1200,
+            height: 900
         },
         galleryImages: [
             {
                 path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                height: 889,
-                width: 710
+                width: 710,
+                height: 889
             },
             {
                 path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                height: 1189,
-                width: 792
+                width: 792,
+                height: 1189
             }
         ]
     },
@@ -92,19 +119,19 @@ export const PROJECTS: Project[] = [
         route: "social-assurance-infographic",
         previewImage: {
             path: "/assets/projects/social-assurance-infographic/preview.jpg",
-            height: 900,
-            width: 1200
+            width: 1200,
+            height: 900
         },
         galleryImages: [
             {
                 path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                height: 889,
-                width: 710
+                width: 710,
+                height: 889
             },
             {
                 path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                height: 1189,
-                width: 792
+                width: 792,
+                height: 1189
             }
         ]
     },
@@ -113,19 +140,19 @@ export const PROJECTS: Project[] = [
         route: "sprint-block-party",
         previewImage: {
             path: "/assets/projects/sprint-block-party/preview.jpg",
-            height: 900,
-            width: 1200
+            width: 1200,
+            height: 900
         },
         galleryImages: [
             {
                 path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                height: 889,
-                width: 710
+                width: 710,
+                height: 889
             },
             {
                 path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                height: 1189,
-                width: 792
+                width: 792,
+                height: 1189
             }
         ]
     }
