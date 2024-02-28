@@ -2,11 +2,14 @@
 @use "sass:color";
 
 $card-spacing: 3rem;
+$large-breakpoint-card-spacing: 2rem;
+$small-breakpoint-card-spacing: 1.5rem;
 
 :host {
     display: flex;
     width: 100%;
     justify-content: center;
+    overflow-x: clip;
 }
 
 .card-container {
@@ -15,6 +18,10 @@ $card-spacing: 3rem;
     justify-content: center;
     align-items: center;
     width: 75%;
+
+    @media (max-width: variables.$breakpoint-large) {
+        width: 85%;
+    }
 }
 
 .card {
@@ -31,6 +38,17 @@ $card-spacing: 3rem;
     background-color: variables.$color-secondary;
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.9);
     transition: box-shadow 300ms ease-out;
+
+    @media (max-width: variables.$breakpoint-large) {
+        padding: $large-breakpoint-card-spacing;
+        gap: $large-breakpoint-card-spacing;
+    }
+
+    @media (max-width: variables.$breakpoint-small) {
+        width: 70%;
+        padding: $small-breakpoint-card-spacing;
+        gap: $small-breakpoint-card-spacing;
+    }
 
     &:hover {
         box-shadow: 0 0 2rem 0 rgba(variables.$color-primary, 0.9);

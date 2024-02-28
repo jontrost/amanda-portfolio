@@ -8,6 +8,7 @@ export const PROJECTS: Project[] = [
     {
         name: "ADPi Social Promo",
         route: "adpi-social-promo",
+        description: "text here",
         previewImage: {
             path: "/assets/projects/adpi-social-promo/preview.jpg",
             width: 1200,
@@ -29,6 +30,7 @@ export const PROJECTS: Project[] = [
     {
         name: "Characters of Carnival",
         route: "characters-of-carnival",
+        description: "text here",
         previewImage: {
             path: "/assets/projects/characters-of-carnival/preview.jpg",
             width: 1200,
@@ -50,6 +52,8 @@ export const PROJECTS: Project[] = [
     {
         name: "Ethereal Dance",
         route: "ethereal-dance",
+        description:
+            "Dance choreography can be thought of as designing movement for the body, but how does that compare to designing visual motion? Through research and personal experimentation, I intend to explore possible ways to mimic or depict dance using graphics. I will be considering questions such as: what design elements can display movement while referencing the human body; and what portrayals of dance are the most successful at representing the movements of the human body? I specifically want to discover how graphic shapes and lines can take on an abstract form to represent the angles of the body alignment captured through movement and dance. The exhibition element displays how design is integrated with dance in the real world: The creation, branding, and marketing of Ethereal Dance Company.",
         previewImage: {
             path: "/assets/projects/ethereal-dance/preview.jpg",
             width: 1200,
@@ -96,6 +100,7 @@ export const PROJECTS: Project[] = [
     {
         name: "LemonADPi Promo",
         route: "lemonadpi-promo",
+        description: "text here",
         previewImage: {
             path: "/assets/projects/lemon-adpi-promo/preview.jpg",
             width: 1200,
@@ -117,6 +122,7 @@ export const PROJECTS: Project[] = [
     {
         name: "Social Assurance Infographic",
         route: "social-assurance-infographic",
+        description: "text here",
         previewImage: {
             path: "/assets/projects/social-assurance-infographic/preview.jpg",
             width: 1200,
@@ -138,6 +144,7 @@ export const PROJECTS: Project[] = [
     {
         name: "Sprint Block Party",
         route: "sprint-block-party",
+        description: "text here",
         previewImage: {
             path: "/assets/projects/sprint-block-party/preview.jpg",
             width: 1200,

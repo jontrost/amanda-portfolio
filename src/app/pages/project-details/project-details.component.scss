@@ -1,20 +1,19 @@
 @use "../../../styles/variables.scss";
+@use "../../../styles/typography.scss";
 @use "sass:color";
 
-$page-spacing-desktop: 3rem;
-$page-spacing-tablet: 2rem;
-$page-spacing-mobile: 1rem;
-$tablet-breakpoint: 80rem;
-$mobile-breakpoint: 40rem;
+$page-spacing: 3rem;
+$large-breakpoint-page-spacing: 2rem;
+$small-breakpoint-page-spacing: 1rem;
 
 // Research single class vs nested hierarchy and rearrange if needed
 
 .page-layout {
     height: 100%;
     width: 100%;
-    padding: $page-spacing-desktop;
+    padding: $page-spacing;
     display: grid;
-    gap: $page-spacing-desktop;
+    gap: $page-spacing;
     align-items: center;
     grid-template-columns: minmax(0, auto) auto;
     grid-template-rows: minmax(0, auto) minmax(0, 1fr);
@@ -22,9 +21,9 @@ $mobile-breakpoint: 40rem;
         "header header"
         "image description";
 
-    @media (max-width: $tablet-breakpoint) {
-        padding: $page-spacing-tablet;
-        gap: $page-spacing-tablet;
+    @media (max-width: variables.$breakpoint-large) {
+        padding: $large-breakpoint-page-spacing;
+        gap: $large-breakpoint-page-spacing;
         justify-items: center;
         grid-template-columns: 100%;
         grid-template-rows: auto minmax(0, 1fr) auto;
@@ -34,9 +33,9 @@ $mobile-breakpoint: 40rem;
             "description";
     }
 
-    @media (max-width: $mobile-breakpoint) {
-        padding: $page-spacing-mobile;
-        gap: $page-spacing-mobile;
+    @media (max-width: variables.$breakpoint-small) {
+        padding: $small-breakpoint-page-spacing;
+        gap: $small-breakpoint-page-spacing;
         grid-template-rows: auto auto minmax(0, 1fr);
         grid-template-areas:
             "header"
@@ -57,7 +56,7 @@ $mobile-breakpoint: 40rem;
         "link empty"
         "name selector";
 
-    @media (max-width: $tablet-breakpoint) {
+    @media (max-width: variables.$breakpoint-large) {
         grid-template-columns: 1fr;
         grid-template-rows: minmax(0, auto) minmax(0, auto) minmax(0, auto);
         grid-template-areas:
@@ -73,28 +72,24 @@ $mobile-breakpoint: 40rem;
     display: flex;
     gap: 5rem;
 
-    @media (max-width: $tablet-breakpoint) {
+    @media (max-width: variables.$breakpoint-large) {
         justify-self: center;
     }
 }
 
 .image-selector-button {
+    @extend %h5;
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: variables.$font-size-h5;
 }
 
 .name {
     grid-area: name;
     text-transform: capitalize;
 
-    @media (max-width: $tablet-breakpoint) {
+    @media (max-width: variables.$breakpoint-large) {
         text-align: center;
-    }
-
-    @media (max-width: $mobile-breakpoint) {
-        font-size: variables.$font-size-h2;
     }
 }
 
@@ -104,36 +99,34 @@ $mobile-breakpoint: 40rem;
     grid-area: image;
     border-radius: 0.75rem;
 
-    @media (max-width: $mobile-breakpoint) {
+    @media (max-width: variables.$breakpoint-small) {
         align-self: flex-start;
     }
 }
 
 .description {
+    @extend %h5;
     grid-area: description;
     border: 0.125rem solid variables.$color-accent;
     border-radius: 0.75rem;
     background-color: variables.$color-secondary;
-    font-size: variables.$font-size-h4;
-    padding: $page-spacing-desktop;
+    padding: $page-spacing;
 
-    @media (max-width: $tablet-breakpoint) {
-        padding: $page-spacing-tablet;
-        font-size: variables.$font-size-h6;
+    @media (max-width: variables.$breakpoint-large) {
+        padding: $large-breakpoint-page-spacing;
     }
 
-    @media (max-width: $mobile-breakpoint) {
-        padding: $page-spacing-mobile;
-        font-size: variables.$font-size-default;
+    @media (max-width: variables.$breakpoint-small) {
+        padding: $small-breakpoint-page-spacing;
     }
 }
 
 .back-link {
+    @extend %h5;
     grid-area: link;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: variables.$font-size-h6;
 
     &:hover {
         // figure out a better color for this
@@ -149,4 +142,9 @@ $mobile-breakpoint: 40rem;
 .selector-icon {
     height: 3rem;
     width: 3rem;
+
+    @media (max-width: variables.$breakpoint-small) {
+        height: 2rem;
+        width: 2rem;
+    }
 }

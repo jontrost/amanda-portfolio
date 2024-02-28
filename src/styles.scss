@@ -3,12 +3,33 @@
 @use "./styles/typography.scss";
 
 body {
+    @extend %body;
     height: 100vh;
     width: 100vw;
     background-color: variables.$color-background;
     background-image: url("assets/images/brick-texture.png");
     background-size: 20rem;
     color: variables.$color-text;
+}
+
+h1 {
+    @extend %h1;
+}
+
+h2 {
+    @extend %h2;
+}
+
+h3 {
+    @extend %h3;
+}
+
+h4 {
+    @extend %h4;
+}
+
+h5 {
+    @extend %h5;
 }
 
 a,

@@ -9,3 +9,8 @@
     align-items: center;
     background: radial-gradient(40% 40% at center center, rgba(variables.$color-accent, 0.4) 0%, transparent 100%);
 }
+
+.title {
+    text-align: center;
+    padding: 0 1rem;
+}
