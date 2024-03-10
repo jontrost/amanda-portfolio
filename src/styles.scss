@@ -1,11 +1,16 @@
-@use "./styles/reset.scss";
-@use "./styles/variables.scss";
-@use "./styles/typography.scss";
+@use "./styles/_reset.scss";
+@use "./styles/_variables.scss";
+@use "./styles/_typography.scss";
+
+html {
+    height: 100%;
+    width: 100%;
+}
 
 body {
     @extend %body;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: variables.$color-background;
     background-image: url("assets/images/brick-texture.png");
     background-size: 20rem;
@@ -32,8 +37,11 @@ h5 {
     @extend %h5;
 }
 
+h6 {
+    @extend %h6;
+}
+
 a,
 button {
     cursor: pointer;
 }
-

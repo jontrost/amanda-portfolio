@@ -34,13 +34,11 @@ $small-breakpoint-page-spacing: 1rem;
     }
 
     @media (max-width: variables.$breakpoint-small) {
+        height: auto;
+        overflow-y: auto;
         padding: $small-breakpoint-page-spacing;
         gap: $small-breakpoint-page-spacing;
         grid-template-rows: auto auto minmax(0, 1fr);
-        grid-template-areas:
-            "header"
-            "description"
-            "image";
     }
 }
 
@@ -78,7 +76,7 @@ $small-breakpoint-page-spacing: 1rem;
 }
 
 .image-selector-button {
-    @extend %h5;
+    //@extend %h5;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -105,7 +103,7 @@ $small-breakpoint-page-spacing: 1rem;
 }
 
 .description {
-    @extend %h5;
+    //@extend %h5;
     grid-area: description;
     border: 0.125rem solid variables.$color-accent;
     border-radius: 0.75rem;
@@ -122,7 +120,7 @@ $small-breakpoint-page-spacing: 1rem;
 }
 
 .back-link {
-    @extend %h5;
+    //@extend %h5;
     grid-area: link;
     display: flex;
     align-items: center;

@@ -6,31 +6,10 @@ import { Project } from "../models/project.model";
 
 export const PROJECTS: Project[] = [
     {
-        name: "ADPi Social Promo",
-        route: "adpi-social-promo",
-        description: "text here",
-        previewImage: {
-            path: "/assets/projects/adpi-social-promo/preview.jpg",
-            width: 1200,
-            height: 900
-        },
-        galleryImages: [
-            {
-                path: "/assets/projects/characters-of-carnival/preview.jpg",
-                width: 1200,
-                height: 900
-            },
-            {
-                path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                width: 792,
-                height: 1189
-            }
-        ]
-    },
-    {
         name: "Characters of Carnival",
         route: "characters-of-carnival",
-        description: "text here",
+        description:
+            'This project was made for the exhibit "Carnival as Resistance" which depicted the ritual and artifacts alongside the modern day practices of Carnival in Antigua and Barbuda. I illustrated the four most important characters of carnival along with the line drawings in the style of fashion sketches. Participants in the parade dress up as these four characters during the annual celebration. The layout of the mural was made in collaboration with Hannah Caulkins.',
         previewImage: {
             path: "/assets/projects/characters-of-carnival/preview.jpg",
             width: 1200,
@@ -38,14 +17,39 @@ export const PROJECTS: Project[] = [
         },
         galleryImages: [
             {
-                path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                width: 710,
-                height: 889
+                path: "/assets/projects/characters-of-carnival/full-layout.jpg",
+                width: 1400,
+                height: 788
             },
             {
-                path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                width: 792,
-                height: 1189
+                path: "/assets/projects/characters-of-carnival/intro.jpg",
+                width: 1200,
+                height: 1800
+            },
+            {
+                path: "/assets/projects/characters-of-carnival/highlander.jpg",
+                width: 1200,
+                height: 1800
+            },
+            {
+                path: "/assets/projects/characters-of-carnival/john-bull.jpg",
+                width: 1200,
+                height: 1800
+            },
+            {
+                path: "/assets/projects/characters-of-carnival/moko-jumbie.jpg",
+                width: 1200,
+                height: 1800
+            },
+            {
+                path: "/assets/projects/characters-of-carnival/skellihopper.jpg",
+                width: 1200,
+                height: 1800
+            },
+            {
+                path: "/assets/projects/characters-of-carnival/wide-angle.jpg",
+                width: 1400,
+                height: 788
             }
         ]
     },
@@ -98,53 +102,10 @@ export const PROJECTS: Project[] = [
         ]
     },
     {
-        name: "LemonADPi Promo",
-        route: "lemonadpi-promo",
-        description: "text here",
-        previewImage: {
-            path: "/assets/projects/lemon-adpi-promo/preview.jpg",
-            width: 1200,
-            height: 900
-        },
-        galleryImages: [
-            {
-                path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                width: 710,
-                height: 889
-            },
-            {
-                path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                width: 792,
-                height: 1189
-            }
-        ]
-    },
-    {
-        name: "Social Assurance Infographic",
-        route: "social-assurance-infographic",
-        description: "text here",
-        previewImage: {
-            path: "/assets/projects/social-assurance-infographic/preview.jpg",
-            width: 1200,
-            height: 900
-        },
-        galleryImages: [
-            {
-                path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                width: 710,
-                height: 889
-            },
-            {
-                path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                width: 792,
-                height: 1189
-            }
-        ]
-    },
-    {
         name: "Sprint Block Party",
         route: "sprint-block-party",
-        description: "text here",
+        description:
+            "I designed this identifier for an event on the Sprint Headquarters Campus. The purpose of the event was to celebrate the grand opening of all of a newly renovated building as well as recognize the Network team for the launch of 5G. I wanted the identifier to signify a fun summer event while keeping the design Sprint branded. The color palate and use of the light brush helped make the event recognizable as a Sprint event. The identifier was used on flyers to promote the event as well as rotating announcements on TV screens throughout campus. It was also included on the photo booth printed pictures you could get at the event.",
         previewImage: {
             path: "/assets/projects/sprint-block-party/preview.jpg",
             width: 1200,
@@ -152,14 +113,14 @@ export const PROJECTS: Project[] = [
         },
         galleryImages: [
             {
-                path: "/assets/projects/adpi-social-promo/love-nu.jpg",
-                width: 710,
-                height: 889
+                path: "/assets/projects/sprint-block-party/graphic.png",
+                width: 2251,
+                height: 2251
             },
             {
-                path: "/assets/projects/adpi-social-promo/smores-date-party.jpg",
-                width: 792,
-                height: 1189
+                path: "/assets/projects/sprint-block-party/photo-booth.jpg",
+                width: 3911,
+                height: 2572
             }
         ]
     }
