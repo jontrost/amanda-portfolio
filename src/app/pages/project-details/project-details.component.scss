@@ -4,7 +4,7 @@
 
 $page-spacing: 3rem;
 $large-breakpoint-page-spacing: 2rem;
-$small-breakpoint-page-spacing: 1rem;
+$small-breakpoint-page-spacing: 2rem;
 
 // Research single class vs nested hierarchy and rearrange if needed
 
@@ -15,7 +15,7 @@ $small-breakpoint-page-spacing: 1rem;
     display: grid;
     gap: $page-spacing;
     align-items: center;
-    grid-template-columns: minmax(0, auto) auto;
+    grid-template-columns: minmax(25rem, auto) auto;
     grid-template-rows: minmax(0, auto) minmax(0, 1fr);
     grid-template-areas:
         "header header"
@@ -36,7 +36,7 @@ $small-breakpoint-page-spacing: 1rem;
     @media (max-width: variables.$breakpoint-small) {
         height: auto;
         overflow-y: auto;
-        padding: $small-breakpoint-page-spacing;
+        padding: calc($small-breakpoint-page-spacing / 2);
         gap: $small-breakpoint-page-spacing;
         grid-template-rows: auto auto minmax(0, 1fr);
     }
@@ -76,7 +76,7 @@ $small-breakpoint-page-spacing: 1rem;
 }
 
 .image-selector-button {
-    //@extend %h5;
+    @extend %h6;
     display: flex;
     align-items: center;
     gap: 1rem;
