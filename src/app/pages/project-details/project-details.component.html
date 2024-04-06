@@ -14,16 +14,14 @@
         </div>
     </div>
     @for (galleryImage of project.galleryImages; track $index) {
-        @if ($index === currentImageIndex()) {
-            <img
-                class="image"
-                [ngSrc]="galleryImage.path"
-                [height]="galleryImage.height"
-                [width]="galleryImage.width"
-                priority
-            />
-        }
+        <img
+            class="image"
+            [hidden]="$index !== currentImageIndex()"
+            [ngSrc]="galleryImage.path"
+            [height]="galleryImage.height"
+            [width]="galleryImage.width"
+            priority
+        />
     }
     <p class="description">{{ project.description }}</p>
 </div>
-
